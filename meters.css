@@ -1,0 +1,39 @@
+/* תצוגות ההתקדמות (משותף לאתר ולבק אופיס). הצבעים לפי ערכת הצבע של האתר. */
+.m-bar { position: relative; height: 12px; background: var(--track, #edeae1); border-radius: 99px; overflow: hidden; margin: 14px 0 10px; }
+.m-bar .m-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--navy, #1e3a8a), var(--accent, #3b82f6)); transition: width .8s; }
+[dir=rtl] .m-bar .m-fill { background: linear-gradient(270deg, var(--navy, #1e3a8a), var(--accent, #3b82f6)); }
+.m-bar.over .m-fill { background: linear-gradient(90deg, var(--gold-dark, #a8832f), var(--gold, #c8a24a)); }
+.m-bar i { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,.9); }
+.m-bar.thick { height: 34px; border-radius: 12px; margin: 16px 0 10px; }
+.m-bar.thick .m-fill { border-radius: 12px; }
+.m-bar .m-lbl { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; font-size: 16px; }
+.m-bar .m-lbl.out { color: var(--navy, #1e3a8a); padding-inline-start: 10px; width: auto; }
+.m-bar.over .m-lbl:not(.out) { color: var(--ink, #1c2434); }
+.m-s1 { stop-color: var(--navy, #1e3a8a); } .m-s2 { stop-color: var(--accent, #3b82f6); }
+.over .m-s1 { stop-color: var(--gold-dark, #a8832f); } .over .m-s2 { stop-color: var(--gold, #c8a24a); }
+.m-track { fill: var(--track, #edeae1); stroke: var(--track, #edeae1); }
+circle.m-track { fill: none; }
+.m-thermo svg .m-track, .m-bld svg .m-track { stroke: none; }
+.m-ring { position: relative; width: 132px; flex: none; }
+.m-ring svg { display: block; width: 100%; height: auto; }
+.m-ring .m-arc { transition: stroke-dashoffset .9s; }
+.m-ring-txt { position: absolute; inset: 0; display: grid; place-items: center; font-size: 28px; font-weight: 900; color: var(--navy, #1e3a8a); font-family: var(--font-head, inherit); }
+.m-thermo { width: 58px; flex: none; } .m-thermo svg { display: block; width: 100%; height: auto; }
+.m-tick { stroke: var(--muted, #575e6b); stroke-width: 1.5; opacity: .5; }
+.m-mark { stroke: var(--gold-dark, #a8832f); stroke-width: 3; stroke-linecap: round; }
+.m-bld { width: 140px; flex: none; } .m-bld svg { display: block; width: 100%; height: auto; }
+.m-outline { stroke: var(--navy-dark, #172554); stroke-width: 2.5; stroke-linejoin: round; }
+.m-star { stroke: var(--navy-dark, #172554); stroke-width: 1.6; stroke-linejoin: round; }
+.m-win { fill: #fff; opacity: .9; stroke: var(--navy-dark, #172554); stroke-width: 1.5; }
+.m-grow { transition: y .9s, height .9s; }
+@media (prefers-reduced-motion: reduce) { .m-bar .m-fill, .m-ring .m-arc, .m-grow { transition: none; } }
+/* פריסה באתר: גרפיקה בצד והמספרים לידה */
+.meter-side { display: flex; align-items: center; gap: 18px; margin: 4px 0 6px; }
+.meter-side .raised { font-size: 34px; }
+.meter-stats { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; font-size: 15px; }
+@media (max-width: 600px) {
+  .meter-side { gap: 12px; }
+  .meter-side .raised { font-size: 28px; }
+  .meter-side .m-ring { width: 100px; } .meter-side .m-ring-txt { font-size: 22px; }
+  .meter-side .m-bld { width: 104px; } .meter-side .m-thermo { width: 46px; }
+}

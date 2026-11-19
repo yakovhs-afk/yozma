@@ -1,0 +1,11 @@
+# Private data from the back office: donations, users, password hashes, login sessions.
+# NEVER upload this folder.
+data/
+
+# Files uploaded through the back office (kept local for now)
+uploads/
+
+# Windows / editor clutter
+Thumbs.db
+desktop.ini
+*.log
